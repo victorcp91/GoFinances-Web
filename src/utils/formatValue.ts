@@ -1,4 +1,8 @@
-const formatValue = (value: number): string =>
-  Intl.NumberFormat().format(value); // TODO
+const formatValue = (value: string): string => {
+  const parsedValue = parseFloat(value);
+  return `R$ ${parsedValue.toLocaleString('pt-br', {
+    minimumFractionDigits: 2,
+  })}`;
+};
 
 export default formatValue;
