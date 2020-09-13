@@ -31,6 +31,7 @@ const Import: React.FC = () => {
         await api.post('/transactions/import', data);
         history.push('/');
       } catch (err) {
+        setUploadedFiles([]);
         console.log(err.response.error);
       }
     });
